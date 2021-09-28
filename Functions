@@ -1,0 +1,84 @@
+function bark(input)
+{
+    console.log("Admin Message: -----> " +input)
+}
+
+const FN_Addition = (num1, num2) => {
+    bark("Addition: "+num1+" + "+num2+" = "+(num1+num2))
+}
+
+const FN_Subtraction = (num1, num2) => {
+    bark("Subtraction: "+num1+" - "+num2+" = "+(num1-num2))
+}
+
+const FN_Multiplication = (num1, num2) => {
+    bark("Multiplication: "+num1+" x "+num2+" = "+(num1*num2))
+}
+
+FN_Addition(142,142)
+FN_Subtraction(150,123)
+FN_Multiplication(150,123)
+
+#region activity 2 - pizza toppings
+
+let orderCount = 0;
+
+const takeOrder = (topping1, topping2) => 
+{
+    orderCount++;
+    console.log("Order #"+orderCount+" \n\tPizza with "+topping1+  " and " + topping2)
+}
+
+takeOrder("Cheese", "Sausage")
+takeOrder("Cheese", "Onion")
+takeOrder("Holy Water", "Unholy Salami")
+
+// //#endregion
+
+//#region activity 3 - cash machine
+    //dispense cash if pun number is correct and balance is greater than the amount
+    //withdrawn
+
+let var_Pin = 1234;
+let var_Balance = 499;
+
+const FN_Withdraw = (pinIn, withdrawIn) => {
+    if(pinIn != var_Pin)
+    {
+        bark("\n\tThe PIN provided was incorrect. The SAS have been notified and are en route.")
+    }
+        else if(withdrawIn > var_Balance)
+    {
+        bark("\n\tYou tried to withdraw £"+(withdrawIn-var_Balance)+" more than you had. A drone strike has been ordered on your position to make sure you're more careful next time.")
+    }
+    else
+    {
+        newBalance = var_Balance - withdrawIn;
+        bark("\n\tSuccess! Your PIN was right and you had enough in your balance to withdraw from. \n\tNew balance is: £"+(newBalance)+ ". \n\tOld balance was: £"+(var_Balance)+ ".")
+        bark("\n\tNow... time to gamble")
+        let redBlack = Math.random()
+        bark("The random number was "+redBlack)
+        if (redBlack < 0.5)
+        {
+            bark("\tHaha! It was red. You lose!")
+            bark("\tYou bank account balance is being set to 0")
+            var_Balance = 0;
+            bark("\tGo on. Try to withdraw something...")
+        
+        
+            bark("\tYou tried to withdraw £"+(withdrawIn-var_Balance)+" more than you had. A drone strike has been ordered on your position. Dont gamble next time.")
+        }
+        else if (redBlack >= 0.5)
+        {
+            bark("Hooray...it was black and you won...")
+            bark("Guess I owe you a prize")
+            var_Balance = var_Balance + 0.1;
+            bark("Your new balance is now: "+var_Balance)
+        }
+    }
+}
+
+FN_Withdraw(1222, 5000)
+FN_Withdraw(1234, 5000)
+FN_Withdraw(1234, 50)
+
