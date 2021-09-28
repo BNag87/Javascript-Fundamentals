@@ -1,0 +1,78 @@
+function bark(input)
+{
+    console.log("-----> " +input)
+}
+
+const myObject = {
+    firstName:"Basil", 
+    lastName:"Nagle", 
+    age:34, 
+    eyeColor:"blue", 
+    fn_SayHI:(fname, sname)=>
+    {
+    console.log("Hi. My name is "+fname+" "+sname+".")
+    }
+};
+
+function FN_getFirstName(object)
+{
+    //bark("Fired FN_getFirstName")
+    return object.fname
+}
+
+function FN_setFirstName(object, nameIn)
+{
+    //bark("Fired FN_setFirstName")
+    let newName = nameIn;
+    object.fname = newName;
+}
+
+FN_setFirstName(myObject, "Flobble")
+bark(FN_getFirstName(myObject))
+
+//#region
+const myCafe = {
+name:"The Moldy Bread Café", 
+maxSeats: 100, 
+hasOffers:true, 
+arr_Drinks:[["Ancient tea", "Very Bitter Coffee", "Stale water", "Second hand milk"],[4.50, 4.95, 45.72, 1.56]],
+arr_Foods:[["Warped banana", "Watery soup", "Wall scrapings", "Broken glass"],[22.80, 14.50, 87.50, 41.50]],
+fn_open:(input)=>
+    {
+        bark("Open the gate! "+(input)+" is now open!")
+    }
+
+};
+
+function orderDrinks(object)
+{
+    let var_index = Math.floor((Math.random()*4))
+    bark("For a drink, you ordered the " +object.arr_Drinks[0][var_index]+" and the price of it is £"+object.arr_Drinks[1][var_index])
+    return (object.arr_Drinks[1][var_index])
+}
+
+orderDrinks(myCafe)
+//#endregion
+
+//#region
+// let arr_Days = ["Monday","Tuesday","Wednesday","Thursday", "Friday", "Saturday", "Sunday"]
+// let day = "Tuesday";
+// const AlarmObj = {weekendAlarm: "No Alarm Needed", weekdayAlarm: "Get up at 7am"}
+
+// for (let i = 0; i < arr_Days.length; i++)
+//     {
+//         if (arr_Days[i] == "Saturday")
+//         {
+//             bark(arr_Days[i]+"? "+AlarmObj.weekendAlarm+"!")
+//         }
+//         else if (arr_Days[i] == "Sunday")
+//         {
+//             bark(arr_Days[i]+"? "+AlarmObj.weekendAlarm+"!")
+//         }
+//         else{
+//             bark(arr_Days[i] + ", "+AlarmObj.weekdayAlarm)
+//         }
+
+//     }
+
+ //#endregion
