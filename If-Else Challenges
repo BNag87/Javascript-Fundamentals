@@ -1,0 +1,188 @@
+//#region bark function to shorten console.log
+function bark(input)
+{
+    console.log("ADMIN MESSAGE ----> " +input)
+}
+
+let age = 118;
+let country = "UK"
+
+if (age >= 18 && country == "UK")
+    {
+        bark("You can drink now. Lucky you!\n")
+    }
+    else if (age >= 18 || country == "UK")
+    {
+        bark("You can't drink. Go away\n")
+    }
+    else
+    {
+        bark("Some other thing means you can't drink here. Go away\n")
+    }
+//#endregion
+
+//#region activity 2 - pizza topping switch
+let var_Topping = "Pepperoni"
+
+switch (var_Topping)
+{
+    case "Cheese":
+        bark("I like " +var_Topping+ " on my pizza.");
+        break;
+
+    case "Pepperoni":
+        bark("I like " +var_Topping+ " on my pizza.");
+        break;
+
+    case "Vegemite":
+        bark("I despise " +var_Topping+ " on my pizza.");
+        break;
+
+    case "Vikings":
+            bark("I despise " +var_Topping+ " on my pizza.");
+            break;
+
+    default:
+        bark("Something went wrong in the switch statement")
+}
+//#endregion
+
+//#region activity 3 - password
+let var_password = "MwAhHsTaBn"
+
+if(var_password.length >= 8)
+{
+    bark("Your password was at least 8 characters. You chose: " +var_password) 
+}
+else
+{
+    bark("Your password was too short. Min 8 characters needed\n")
+}
+//#endregion
+
+//#region activity 3/4 stretch- division
+
+let var_num = 158
+if(var_num % 3 == 0 && var_num % 5 == 0)
+{
+    bark("Fizz buzz")
+}
+else if(var_num % 3 == 0)
+{
+    bark("Fizz")
+}
+else if(var_num % 5 == 0)
+{
+    bark("Buzz")
+}
+else
+{
+    bark("Neither fizz nor buzz... Absolute catastrophe\n")
+}
+//#endregion
+
+//#region activity 5 - palindrome
+let var_palinNum = "boobytrap";
+//bark(var_palinNum+" is whats in var_palinNum")
+
+arr_palin = var_palinNum.split("")
+//bark(arr_palin+" is whats in arr_palin")
+
+arr_palinReversed = arr_palin.reverse("")
+//bark(arr_palinReversed+" is whats in arr_palinReversed")
+
+let joined_arrPalin = arr_palinReversed.join("")
+//bark(joined_arrPalin+" is whats in joined_arrPalin after .join was used on it\n")
+
+if (joined_arrPalin == var_palinNum)
+{
+    bark("'"+var_palinNum+"' is a palindrome!\n")
+}
+else{
+    bark("'"+var_palinNum+"' is NOT a palindrome!\n")
+}
+//#endregion 
+
+//#region activity 6 - place of work
+let var_placeOfWork = "a coal mine.";
+let var_townOfHome = "a landfill.";
+let var_currentTime = 11;
+
+switch(var_currentTime)
+{
+    case 6:
+        bark("It's 6am. I'm getting up and ready")
+        break;
+    case 7:
+        bark("It's 7am. I'm eating breakfast at my home in "+var_townOfHome)
+        break;
+    case 8:
+        bark("It's 8am. I'm kayaking to my workplace in "+var_placeOfWork)
+        break;
+    case 9:
+    case 10:
+    case 11:
+        bark("It's the morning shift. I'm counting dust particles in "+var_placeOfWork)
+        break;
+    case 12:
+        bark("It's 12pm. I'm eating things I find in my pocket in "+var_placeOfWork)
+        break;
+    case 13:
+    case 14:
+    case 15:
+    case 16:
+        bark("It's the afternoon shift. I'm polishing water in "+var_placeOfWork)
+        break;
+    case 17:
+        bark("I didn't shoot anyone today. Time to head home to "+var_townOfHome)
+        break;
+    default:
+        bark("Some other nonsense")
+}
+//#endregion
+
+//#region activity 7: find last vowel
+bark("\n")
+
+//variable that will be split and analysed
+let var_nonsense = 'jrfndklhgfndfhdknsadcvjhiiohjfkledsopiuhgtyujwsdxcvhgfdjhiopiwquhejkdsoiufghedjwshi'
+
+//variable that holds the split information of the var_nonsense
+let arr_splitNonsense = var_nonsense.split("");
+
+//an array of all vowels
+let arr_vowels = ["a", "e", "i", "o", "u"];
+
+//an initially empty array that is used to store vowels stripped out of the nonsense word above
+let arr_strippedVowels = [];
+
+//an initially empty array used for storing loop indexes (to show exactly where the relevant vowel came from)
+let arr_originalVowelIndex = [];
+
+
+//main loop, this is used to loop through every character in the nonsense variable
+for (let i = 0; i < var_nonsense.length; i++)
+{
+    //t
+    for(let j = 0; j < arr_vowels.length; j++)
+    {
+       // bark("inside the j forLoop, i = "+i+" and j = "+j)
+
+        if (arr_splitNonsense[i] == arr_vowels[j])
+        {
+            arr_strippedVowels.push(arr_splitNonsense[i])
+            arr_originalVowelIndex.push(i)
+            //bark("arr_splitNonsense had the vowel '"+ arr_splitNonsense[i] + "' in it so it was pushed")
+        }
+        else 
+        {
+            continue
+        }
+    }
+}
+
+arr_joinedStrippedVowels = arr_strippedVowels.join("");
+
+bark("Here's some nonsense: "+var_nonsense)
+bark("After executing that for loop on the string of nonsense, here's the vowels extracted: "+arr_joinedStrippedVowels)
+bark("The final vowel of the string of nonsense was: "+arr_joinedStrippedVowels[arr_joinedStrippedVowels.length-1]+" and the character position of it was: "+arr_originalVowelIndex[arr_originalVowelIndex.length-1]+"/"+(arr_splitNonsense.length-1))
