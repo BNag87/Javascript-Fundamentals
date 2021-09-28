@@ -1,0 +1,53 @@
+function bark(input) {
+    console.log("ADMIN MESSAGE-----> "+input)
+  }
+
+//act 1 + stretch
+let var_myName = "Basil"
+let var_myAge = 34
+let var_myColour = "Red"
+
+bark(`Hello, I'm ${var_myName}. I'm ${+var_myAge} and I love the colour ${var_myColour}.`)
+
+var_myName = "Wiggles"
+var_myAge = 3294
+var_myColour = "Octarine"
+
+bark(`Wait.... I forgot that I'm actually called ${var_myName}. I'm ${+var_myAge} and I love the colour ${var_myColour}.\n`)
+
+//act 2 + stretch
+let var_myBreakfast = "Eggs and Bacon"
+let var_myLunch = "Tomato Soup and Marmite toast"
+let var_myTea = "Corned Beef hash"
+
+bark(`Today, I ate ${var_myBreakfast} for breakfast. Then, for lunch, I had ${var_myLunch}. Finally, for tea I ate ${var_myTea}`)
+
+var_myBreakfast = "Sewage"
+var_myLunch = "Second hand UHT Milk"
+var_myTea = "Yeast"
+
+bark(`Tomorrow, I think I'll have ${var_myBreakfast} for breakfast. Then, ${var_myLunch} for lunch. Then I feel like ${var_myTea} for tea.\n`)
+
+//act 3 + stretch
+
+
+let birthday = new Date(1987, 7, 15);
+bark("birthday: " +birthday)
+
+let today = new Date();
+bark("today: " +today)
+
+//Set current year or the next year if you already had birthday this year
+birthday.setFullYear(today.getFullYear());
+bark("birthday.settFullYear(today.getFullYear()): " +birthday)
+
+if (today > birthday) 
+{
+    bark("today > birthday: " +(today > birthday))
+    birthday.setFullYear(today.getFullYear() + 1);
+}
+
+//Calculate difference between days
+let result = Math.floor((birthday - today) / (1000*60*60*24));
+
+bark(result+ " days until your birthday!")
