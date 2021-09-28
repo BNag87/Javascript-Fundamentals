@@ -1,0 +1,48 @@
+function bark(input)
+{
+    console.log("Admin Message: -----> " +input)
+}
+//Self study work on classes/oop
+
+class Rectangle
+{
+
+    //set up object and anything important belonging to it
+    constructor(_width, _height, _colour)
+    {
+        bark("Rectangle construction method fired!")
+        this.width = _width;
+        this.height = _height;
+        this.colour = _colour;
+        this.numOfRequestsForArea = 0;
+    }
+    
+    //this is a 'getter'. its only use is to return a specific piece of data from inside the class
+    //the getter method also applies to this class only.
+    getArea()
+    {
+        this.numOfRequestsForArea++;
+        bark("Number of requsests for Area: "+this.numOfRequestsForArea)
+        return (this.width * this.height)
+    }
+
+
+    //this is a 'setter'. Its only purpose is to change the value of a variable inside the 
+    //class definition
+    setArea(area)
+    {
+        this.width = Math.sqrt(area);
+        this.height = this.width;
+    }
+
+    //a static method is not part of the instantiated object. 
+    //also known as "helper methods"
+}
+
+let myRectangle1 = new Rectangle(5,10,"Pink");
+myRectangle1.setArea(464)
+bark("myRectangle1 is " + myRectangle1.colour+". It's " +myRectangle1.height +"ft high and "+myRectangle1.width+"ft wide.")
+bark("myRectangle1 area is " + myRectangle1.getArea())
+
+
+
