@@ -1,0 +1,32 @@
+//function to shorten writing console.log every time
+
+
+function bark(input)
+{
+    console.log("ADMIN MESSAGE -----> "+input)
+}
+
+//Arrays ACT1 - Favourite songs
+
+let arr_favSongs = ["Black Rebel Motorcycle Club - 'No easy way'", "Houndmouth - 'Comin round again'", "Muse - 'K'nights of Cydonia'" ];
+
+bark("Contents of arr_favSongs: " +arr_favSongs)
+bark("Contents of arr_favSongs[2]: " +arr_favSongs[2])
+bark("Total elements in arr_favSongs: " +arr_favSongs.length)
+
+arr_favSongs.push("Wigwam - Second hand UHT Milk ")
+
+bark("Contents of arr_favSongs after update: " +arr_favSongs)
+
+arr_favSongs.unshift("Parker Milsap - Fine Line")
+
+bark("Contents of arr_favSongs after .unshift update: " +arr_favSongs)
+
+//#region ACT 3 - loop from 9 to 0
+
+for(let i = 9; i>=0; i--)
+{
+    bark("COUNTDOWN: "+ i)
+}
+
+
